@@ -19,6 +19,6 @@ export default function getCompletion(prompt) {
       return completion.data.choices[0].text;
     })
     .catch((error) => {
-      console.error(error.message);
+      throw new Error(error.message);
     });
 }
