@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import getCompletion from "./controller.js";
 import lib from "./lib/index.js";
@@ -5,6 +6,8 @@ import lib from "./lib/index.js";
 const PORT = 3000;
 
 const app = express();
+
+app.use(cors({ origin: "http://localhost:5173" }));
 
 app.get("/:animal", (req, res) => {
   const { animal } = req.params;
